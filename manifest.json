@@ -3,25 +3,16 @@
     "name": "SafeScroll",
     "description": "DUBHACKS '23",
     "version": "1.0",
-    "minimum_chrome_version": "102",
-    "omnibox": {
-        "keyword": "api"
-    },
     "action": {
       "default_popup": "index.html",
       "default_icon": "safeScrollLogo.png"
     },
     "content_scripts": [
         {
-            "matches": ["https://developer.chrome.com/docs/extensions/reference/*"],
-            "js": ["content.js"]
+            "js": ["code.js"],
+            "matches": [
+                "https://*/*"
+            ]
         }
-    ],
-    "background": {
-        "service_worker": "service-worker.js",
-        "type": "module"
-      },
-     "permissions": ["storage", "alarms"]
-     
+    ]
 }
-
